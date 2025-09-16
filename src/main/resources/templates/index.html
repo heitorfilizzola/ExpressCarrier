@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Expresso Norte Nordeste</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" th:href="@{css/carousel.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img th:src="@{images/logo.png}" alt=""></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Cotação</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2><i class="fas fa-phone"></i> (99)91232-1232</h2>
+            <h1>TRANSPORTE PARA<br>TODO BRASIL</h1>
+            <a href="#">
+                <img th:src="@{images/wppButton.png}" class="whatsapp-btn" alt="WhatsApp">
+            </a>
+        </div>
+    </section>
+    <img th:src="@{images/transitionRectangles.png}" alt="" class="transitionRectangles">
+    <section class="sobre">
+        <div class="texto">
+            <h2>SOBRE NÓS</h2>
+            <p>
+                Na Expresso Norte Nordeste, cada entrega é tratada como prioridade. Com anos de experiência no mercado e
+                uma equipe altamente qualificada, oferecemos soluções rápidas, seguras e eficientes para o transporte da
+                sua carga.
+                Nossa frota moderna e bem-mantida garante mais confiabilidade, mas não paramos por aí: investimos em
+                tecnologia de rastreamento de ponta, utilizada mundialmente para maximizar a segurança das mercadorias.
+                Trabalhamos com rastreadores israelenses de última geração, permitindo monitorar em tempo real o
+                caminhão e a carga.
+                Isso significa que você tem transparência total, sabendo exatamente onde sua mercadoria está a cada
+                momento. Mais segurança para sua carga, mais tranquilidade para você.
+                Com a Expresso Norte Nordeste, sua entrega chega no prazo, em perfeitas condições e com todo o cuidado
+                que você merece.
+            </p>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img th:src="@{images/truck1.jpg}" alt="Caminhão 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img th:src="@{images/truck2.jpg}" alt="Caminhão 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img th:src="@{images/truck3.jpg}" alt="Caminhão 3">
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-btn-prev" aria-label="Slide anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Próximo slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+    <img th:src="@{images/transitionRectanglesLr.png}" alt="" class="transitionRectangles" id="transitionRectanglesLr">
+    <section class="container">
+        <section class="image-column">
+            <img th:src="@{images/truckServ.png}" alt="Caminhão moderno em um pátio ao entardecer">
+        </section>
+
+        <div class="services-column">
+            <h2 class="section-title">SERVIÇOS</h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-truck"></i>
+                    <h3>Frete Dedicado</h3>
+                    <p>Dedicação e confiança no transporte da sua carga.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <h3>Grandes cargas</h3>
+                    <p>Frota completa para cargas de grande volume.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-gears"></i>
+                    <h3>Rastreadores</h3>
+                    <p>Rastreador israelense o que há de mais moderno no mercado</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-tag"></i>
+                    <h3>Isca para carga</h3>
+                    <p>Monitoramento inteligente com isca de rastreio para cargas valiosas.</p>
+                </div>
+
+            </div>
+
+            <div class="highlights-section">
+                <div class="highlight-item">
+                    <span class="highlight-number">100%</span>
+                    <p>De segurança garantida</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">24hr</span>
+                    <p>Rastreamento disponível</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">3</span>
+                    <p>Tipos de rastreio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="billCont">
+        <img th:src="@{images/billPhoto.png}" alt="" class="billPhoto">
+        <div class="billTexts">
+            <p>FALE DIRETAMENTE COM NOSSA EQUIPE</p>
+            <h2>SOLICITE SUA COTAÇÃO AGORA MESMO!</h2>
+        </div>
+        <img th:src="@{images/wppButton2.png}" alt="" class="wppButton2">
+
+    </section>
+
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                
+                <div class="footer-column left">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <a href="#"><i class="fab fa-instagram"></i> @empresa</a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="tel:81999999999"><i class="fab fa-whatsapp"></i> (81)99999-9999</a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="#"><i class="fab fa-facebook-f"></i> empresa</a>
+                        </div>
+                        <div class="contact-item">
+                            <a href="mailto:email@empresa.com"><i class="fas fa-envelope"></i> email@empresa.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column center">
+                    <div class="footer-logo">
+                        <img th:src="@{images/logo.png}" alt="Logo Expreso Norte e Nordeste">
+                    </div>
+                </div>
+
+                <div class="footer-column right">
+                    <div class="footer-address">
+                        <p>AV Logo Ai 123</p>
+                        <p>512312-90, lugar ali</p>
+                        <p>brazil Pe</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright© 2025 Expreso Norte e Nordeste,<br>Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script th:src="@{js/script.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,775 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
+}
+
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2D2D2D;
+  padding: 15px 5%;
+  color: #fff;
+  min-height: 70px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+header .logo {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  /* Limitado para evitar overflow */
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+header .logo span {
+  color: #25d366;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  /* Reduzido para telas pequenas */
+  flex-wrap: wrap;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  /* Mais controlado */
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+header nav ul li a:hover {
+  color: #25d366;
+  text-shadow: 0px 0px 10px rgba(37, 211, 102, 0.8);
+  /* Corrigido valores da sombra */
+  /* background-color: rgba(37, 211, 102, 0.1); */
+  animation: ease-in 0.5s;
+}
+
+/* Hero Section com controle rígido de overflow */
+.hero {
+  background: url('../images/bgImage.png') no-repeat center center/cover;
+  height: 90vh;
+  /* Altura fixa para evitar crescimento */
+  max-height: 90vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  /* Evita overflow do conteúdo */
+  padding: 20px 5%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  width: 100%;
+  max-height: 80vh;
+  /* Limita altura do conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 3vh, 25px);
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  /* Limitado para evitar overflow */
+  margin: 20px 0;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  /* Controlado para não passar dos limites */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* Animação do ícone de telefone - MANTIDA ORIGINAL */
+.hero-content h2 i.fas.fa-phone {
+  display: inline-block;
+  animation: phoneRing 1.5s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  color: #25d366;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+@keyframes phoneRing {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  10%,
+  30% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+  20%,
+  40% {
+    transform: rotate(10deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Efeito de hover no número do telefone - MANTIDO ORIGINAL */
+.hero-content h2:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  /* Reduzido para evitar overflow */
+  transition: transform 0.3s ease;
+}
+
+.hero-content h2:hover i.fas.fa-phone {
+  animation-duration: 0.5s;
+  color: #fff;
+  text-shadow: 0px 0px 15px rgba(37, 211, 102, 0.8);
+}
+
+.whatsapp-btn {
+  max-width: clamp(120px, 20vw, 180px);
+  /* Responsivo e limitado */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  /* Reduzido para evitar overflow */
+  filter: brightness(1.1);
+}
+
+/* Sobre nós */
+.sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(30px, 6vw, 60px) 5%;
+  background: #fff;
+  flex-wrap: wrap;
+  gap: clamp(20px, 4vw, 40px);
+  min-height: 400px;
+}
+
+.sobre .texto {
+  flex: 1 1 350px;
+  max-width: 600px;
+}
+
+.sobre .texto h2 {
+  color: #1c7c3a;
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sobre .texto p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  text-align: justify;
+  color: #555;
+}
+
+.sobre .imagem {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+.sobre img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sobre img:hover {
+  transform: scale(1.02);
+}
+
+.services {
+  background-color: #2D2D2D;
+}
+
+.transitionRectangles {
+  width: 100%;
+}
+
+#transitionRectanglesLr {
+  position: relative;
+  top: 20px;
+}
+
+.container {
+  display: flex;
+  padding: 100px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: #2D2D2D;
+  overflow: hidden;
+  /* Garante que o conteúdo não ultrapasse as bordas arredondadas do container se você adicionar */
+}
+
+/* Coluna da Imagem */
+.image-column {
+  flex: 1;
+  /* Ocupa metade do espaço */
+  justify-content: center;
+  display: flex;
+}
+
+.image-column img {
+  width: 662px;
+  height: 745px;
+  object-fit: cover;
+  /* Garante que a imagem cubra todo o espaço sem distorcer */
+  display: block;
+  border-radius: 20px;
+}
+
+/* Coluna de Serviços */
+.services-column {
+  flex: 1.2;
+  /* Ocupa um pouco mais da metade do espaço */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6aab3d;
+  /* Cor verde do design */
+  margin-bottom: 0.5rem;
+  position: relative;
+  right: 0;
+  display: flex;
+  justify-content: end;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 15%;
+  height: 3px;
+  background-color: #6aab3d;
+}
+
+/* Grid com os cards de serviço */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 380px));
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.service-card {
+  border: 1px solid #777;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  background-color: #3a3a3a;
+  border-color: #fff;
+}
+
+.service-card i {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* Seção de destaques (100%, 24hr, 3) */
+.highlights-section {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: auto;
+  /* Empurra esta seção para a parte inferior da coluna */
+  padding-top: 2rem;
+}
+
+.highlight-item {
+  flex: 1;
+}
+
+.highlight-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6aab3d;
+  display: block;
+}
+
+.highlight-item p {
+  font-size: 0.9rem;
+  width: 70%;
+  color: white;
+  border-bottom: 5px solid white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.billCont {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 130px 0;
+  padding: 50px 5%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.billCont .billPhoto {
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.billTexts {
+  color: #000;
+  font-family: Arial, sans-serif;
+  max-width: 45%;
+}
+
+.billTexts p,
+.billTexts h2 {
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.billTexts p {
+  font-size: 1.8vw;
+  font-weight: lighter;
+}
+
+.billTexts h2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #1c7c3a;
+}
+
+.wppButton2 {
+  transition: transform 0.3s ease;
+
+}
+
+.wppButton2:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
+
+}
+
+.billCont>img:nth-of-type(2) {
+  width: auto;
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+}
+
+.site-footer {
+  background-color: #2e2e2e;
+  /* Cor de fundo escura do footer */
+  color: #dcdcdc;
+  /* Cor do texto principal */
+  padding: 50px 0 20px;
+  font-size: 15px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* Espaçamento lateral */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* Permite que os itens quebrem a linha em telas menores */
+  gap: 30px;
+  /* Espaço entre as colunas */
+  padding-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  /* Faz com que as colunas ocupem espaço igual */
+  min-width: 250px;
+  /* Largura mínima para cada coluna antes de quebrar */
+}
+
+/* Coluna da Esquerda: Contatos */
+.footer-column.left {
+  border-top: 2px solid #84C43E;
+  padding-top: 20px;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* Grid responsivo */
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-item a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: #ffffff;
+}
+
+.contact-item i {
+  font-size: 20px;
+  margin-right: 12px;
+  width: 20px;
+  /* Alinhamento dos ícones */
+}
+
+/* Coluna do Centro: Logo */
+.footer-column.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.5;
+  /* Faz com que a coluna do logo seja um pouco menor */
+}
+
+.footer-logo img {
+  max-width: 200px;
+  /* Ajuste o tamanho do logo conforme necessário */
+  height: auto;
+}
+
+/* Coluna da Direita: Endereço */
+.footer-column.right {
+  border-top: 2px solid #84C43E;
+  padding-top: 20px;
+  text-align: right;
+}
+
+.footer-address p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Linha e Copyright */
+.footer-bottom {
+  border-top: 1px solid #84C43E;
+  padding-top: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+/* --- Media Query para Responsividade (Celulares) --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    /* Empilha as colunas */
+    align-items: center;
+    /* Centraliza o conteúdo */
+    gap: 40px;
+  }
+
+  .footer-column.left,
+  .footer-column.right {
+    width: 100%;
+    max-width: 350px;
+    /* Limita a largura das colunas de texto */
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    /* Uma coluna para os contatos */
+  }
+
+  .footer-column.right {
+    text-align: center;
+    /* Centraliza o endereço */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .billCont {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 15px;
+  }
+
+  .billCont .billPhoto {
+    width: 100%;
+  }
+
+  .billTexts {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .billTexts p {
+    font-size: 4vw;
+  }
+
+  .billTexts h2 {
+    font-size: 5.5vw;
+  }
+
+  .billCont>img:nth-of-type(2) {
+    max-width: 250px;
+  }
+}
+
+/* Media Query para Responsividade (telas menores) */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+
+  .services-column {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    /* Uma coluna em telas muito pequenas */
+  }
+
+  .highlights-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .highlight-number {
+    font-size: 2rem;
+  }
+}
+
+/* Responsivo detalhado */
+@media (max-width: 1200px) {
+  header {
+    padding: 15px 3%;
+  }
+
+  .hero {
+    padding: 20px 3%;
+  }
+
+  .sobre {
+    padding: 40px 3%;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  .hero-content h2 {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    height: 80vh;
+    /* Reduzido para mobile */
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    margin: 15px 0;
+  }
+
+  .hero-content h2 {
+    margin-bottom: 15px;
+  }
+
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 15px;
+  }
+
+  .sobre .texto,
+  .sobre .imagem {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-column img {
+    height: 90%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  header nav ul {
+    gap: 8px;
+  }
+
+  header nav ul li a {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    height: 75vh;
+    /* Ainda mais reduzido para telas pequenas */
+    padding: 15px;
+  }
+
+  .hero-content {
+    max-height: 70vh;
+  }
+
+  .sobre {
+    padding: 30px 10px;
+  }
+
+  .whatsapp-btn {
+    max-width: 150px;
+  }
+}
+
+/* Limitações para zoom extremo e telas grandes */
+@media (min-width: 1400px) {
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  header .logo {
+    font-size: 1.6rem;
+  }
+}
+
+/* Prevenção adicional de overflow */
+.hero-content *,
+.hero-content h1,
+.hero-content h2 {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
