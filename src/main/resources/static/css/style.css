@@ -9,10 +9,8 @@ body {
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
-  /* Evita scroll horizontal */
 }
 
-/* Navbar */
 header {
   display: flex;
   justify-content: space-between;
@@ -28,7 +26,6 @@ header {
 
 header .logo {
   font-size: clamp(1.2rem, 3vw, 1.6rem);
-  /* Limitado para evitar overflow */
   font-weight: bold;
   white-space: nowrap;
 }
@@ -41,7 +38,6 @@ header nav ul {
   list-style: none;
   display: flex;
   gap: clamp(10px, 2vw, 20px);
-  /* Reduzido para telas pequenas */
   flex-wrap: wrap;
 }
 
@@ -50,7 +46,6 @@ header nav ul li a {
   text-decoration: none;
   font-weight: 500;
   font-size: clamp(0.8rem, 1.8vw, 1rem);
-  /* Mais controlado */
   padding: 8px 12px;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -60,16 +55,12 @@ header nav ul li a {
 header nav ul li a:hover {
   color: #25d366;
   text-shadow: 0px 0px 10px rgba(37, 211, 102, 0.8);
-  /* Corrigido valores da sombra */
-  /* background-color: rgba(37, 211, 102, 0.1); */
   animation: ease-in 0.5s;
 }
 
-/* Hero Section com controle rígido de overflow */
 .hero {
   background: url('../images/bgImage.png') no-repeat center center/cover;
   height: 90vh;
-  /* Altura fixa para evitar crescimento */
   max-height: 90vh;
   width: 100vw;
   display: flex;
@@ -79,7 +70,6 @@ header nav ul li a:hover {
   color: #fff;
   position: relative;
   overflow: hidden;
-  /* Evita overflow do conteúdo */
   padding: 20px 5%;
 }
 
@@ -99,7 +89,6 @@ header nav ul li a:hover {
   max-width: 90%;
   width: 100%;
   max-height: 80vh;
-  /* Limita altura do conteúdo */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +98,6 @@ header nav ul li a:hover {
 
 .hero-content h1 {
   font-size: clamp(2rem, 6vw, 3.5rem);
-  /* Limitado para evitar overflow */
   margin: 20px 0;
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -122,7 +110,6 @@ header nav ul li a:hover {
 
 .hero-content h2 {
   font-size: clamp(1rem, 3vw, 1.4rem);
-  /* Controlado para não passar dos limites */
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   display: flex;
@@ -133,7 +120,6 @@ header nav ul li a:hover {
   max-width: 100%;
 }
 
-/* Animação do ícone de telefone - MANTIDA ORIGINAL */
 .hero-content h2 i.fas.fa-phone {
   display: inline-block;
   animation: phoneRing 1.5s ease-in-out infinite;
@@ -143,7 +129,6 @@ header nav ul li a:hover {
 }
 
 @keyframes phoneRing {
-
   0%,
   100% {
     transform: rotate(0deg) scale(1);
@@ -164,11 +149,9 @@ header nav ul li a:hover {
   }
 }
 
-/* Efeito de hover no número do telefone - MANTIDO ORIGINAL */
 .hero-content h2:hover {
   cursor: pointer;
   transform: scale(1.02);
-  /* Reduzido para evitar overflow */
   transition: transform 0.3s ease;
 }
 
@@ -180,7 +163,6 @@ header nav ul li a:hover {
 
 .whatsapp-btn {
   max-width: clamp(120px, 20vw, 180px);
-  /* Responsivo e limitado */
   width: 100%;
   height: auto;
   display: inline-block;
@@ -191,11 +173,9 @@ header nav ul li a:hover {
 
 .whatsapp-btn:hover {
   transform: scale(1.05);
-  /* Reduzido para evitar overflow */
   filter: brightness(1.1);
 }
 
-/* Sobre nós */
 .sobre {
   display: flex;
   align-items: center;
@@ -262,13 +242,10 @@ header nav ul li a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   background-color: #2D2D2D;
   overflow: hidden;
-  /* Garante que o conteúdo não ultrapasse as bordas arredondadas do container se você adicionar */
 }
 
-/* Coluna da Imagem */
 .image-column {
   flex: 1;
-  /* Ocupa metade do espaço */
   justify-content: center;
   display: flex;
 }
@@ -277,15 +254,12 @@ header nav ul li a:hover {
   width: 662px;
   height: 745px;
   object-fit: cover;
-  /* Garante que a imagem cubra todo o espaço sem distorcer */
   display: block;
   border-radius: 20px;
 }
 
-/* Coluna de Serviços */
 .services-column {
   flex: 1.2;
-  /* Ocupa um pouco mais da metade do espaço */
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -295,7 +269,6 @@ header nav ul li a:hover {
   font-size: 1.2rem;
   font-weight: 700;
   color: #6aab3d;
-  /* Cor verde do design */
   margin-bottom: 0.5rem;
   position: relative;
   right: 0;
@@ -313,7 +286,6 @@ header nav ul li a:hover {
   background-color: #6aab3d;
 }
 
-/* Grid com os cards de serviço */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 380px));
@@ -352,13 +324,11 @@ header nav ul li a:hover {
   line-height: 1.4;
 }
 
-/* Seção de destaques (100%, 24hr, 3) */
 .highlights-section {
   display: flex;
   justify-content: space-around;
   text-align: center;
   margin-top: auto;
-  /* Empurra esta seção para a parte inferior da coluna */
   padding-top: 2rem;
 }
 
@@ -431,14 +401,12 @@ header nav ul li a:hover {
 
 .wppButton2 {
   transition: transform 0.3s ease;
-
 }
 
 .wppButton2:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
   transition: transform 0.3s ease;
-
 }
 
 .billCont>img:nth-of-type(2) {
@@ -450,9 +418,7 @@ header nav ul li a:hover {
 
 .site-footer {
   background-color: #2e2e2e;
-  /* Cor de fundo escura do footer */
   color: #dcdcdc;
-  /* Cor do texto principal */
   padding: 50px 0 20px;
   font-size: 15px;
 }
@@ -461,7 +427,6 @@ header nav ul li a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  /* Espaçamento lateral */
 }
 
 .footer-content {
@@ -469,20 +434,15 @@ header nav ul li a:hover {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  /* Permite que os itens quebrem a linha em telas menores */
   gap: 30px;
-  /* Espaço entre as colunas */
   padding-bottom: 30px;
 }
 
 .footer-column {
   flex: 1;
-  /* Faz com que as colunas ocupem espaço igual */
   min-width: 250px;
-  /* Largura mínima para cada coluna antes de quebrar */
 }
 
-/* Coluna da Esquerda: Contatos */
 .footer-column.left {
   border-top: 2px solid #84C43E;
   padding-top: 20px;
@@ -491,7 +451,6 @@ header nav ul li a:hover {
 .contact-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  /* Grid responsivo */
   gap: 15px;
 }
 
@@ -514,25 +473,20 @@ header nav ul li a:hover {
   font-size: 20px;
   margin-right: 12px;
   width: 20px;
-  /* Alinhamento dos ícones */
 }
 
-/* Coluna do Centro: Logo */
 .footer-column.center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 0.5;
-  /* Faz com que a coluna do logo seja um pouco menor */
 }
 
 .footer-logo img {
   max-width: 200px;
-  /* Ajuste o tamanho do logo conforme necessário */
   height: auto;
 }
 
-/* Coluna da Direita: Endereço */
 .footer-column.right {
   border-top: 2px solid #84C43E;
   padding-top: 20px;
@@ -544,7 +498,6 @@ header nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* Linha e Copyright */
 .footer-bottom {
   border-top: 1px solid #84C43E;
   padding-top: 20px;
@@ -554,13 +507,10 @@ header nav ul li a:hover {
   color: #a0a0a0;
 }
 
-/* --- Media Query para Responsividade (Celulares) --- */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    /* Empilha as colunas */
     align-items: center;
-    /* Centraliza o conteúdo */
     gap: 40px;
   }
 
@@ -568,20 +518,16 @@ header nav ul li a:hover {
   .footer-column.right {
     width: 100%;
     max-width: 350px;
-    /* Limita a largura das colunas de texto */
   }
 
   .contact-info {
     grid-template-columns: 1fr;
-    /* Uma coluna para os contatos */
   }
 
   .footer-column.right {
     text-align: center;
-    /* Centraliza o endereço */
   }
 }
-
 
 @media (max-width: 768px) {
   .billCont {
@@ -612,7 +558,6 @@ header nav ul li a:hover {
   }
 }
 
-/* Media Query para Responsividade (telas menores) */
 @media (max-width: 992px) {
   .container {
     flex-direction: column;
@@ -628,7 +573,6 @@ header nav ul li a:hover {
 @media (max-width: 576px) {
   .services-grid {
     grid-template-columns: 1fr;
-    /* Uma coluna em telas muito pequenas */
   }
 
   .highlights-section {
@@ -641,7 +585,6 @@ header nav ul li a:hover {
   }
 }
 
-/* Responsivo detalhado */
 @media (max-width: 1200px) {
   header {
     padding: 15px 3%;
@@ -687,7 +630,6 @@ header nav ul li a:hover {
 
   .hero {
     height: 80vh;
-    /* Reduzido para mobile */
     padding: 20px;
   }
 
@@ -733,7 +675,6 @@ header nav ul li a:hover {
 
   .hero {
     height: 75vh;
-    /* Ainda mais reduzido para telas pequenas */
     padding: 15px;
   }
 
@@ -750,7 +691,6 @@ header nav ul li a:hover {
   }
 }
 
-/* Limitações para zoom extremo e telas grandes */
 @media (min-width: 1400px) {
   .hero-content h1 {
     font-size: 3.2rem;
@@ -765,7 +705,6 @@ header nav ul li a:hover {
   }
 }
 
-/* Prevenção adicional de overflow */
 .hero-content *,
 .hero-content h1,
 .hero-content h2 {
