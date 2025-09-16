@@ -1,1 +1,1 @@
-Projeto feito em conjunto com o desenvolvedor [Ítalo Brás](https://github.com/ItaloBrazz)
+Projeto feito em conjunto com o desenvolvedor [Ítalo Braz](https://github.com/ItaloBrazz)
