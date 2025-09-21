@@ -14,15 +14,14 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo"><img th:src="@{images/logo.png}" alt=""></div>
+    <header id="home"> <div class="logo"><img th:src="@{images/logo.png}" alt=""></div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Cotação</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#cotacao">Cotação</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -37,7 +36,8 @@
         </div>
     </section>
     <img th:src="@{images/transitionRectangles.png}" alt="" class="transitionRectangles">
-    <section class="sobre">
+    
+    <section class="sobre" id="sobre">
         <div class="texto">
             <h2>SOBRE NÓS</h2>
             <p>
@@ -84,7 +84,8 @@
         </div>
     </section>
     <img th:src="@{images/transitionRectanglesLr.png}" alt="" class="transitionRectangles" id="transitionRectanglesLr">
-    <section class="container">
+    
+    <section class="container" id="servicos">
         <section class="image-column">
             <img th:src="@{images/truckServ.jpg}" alt="Caminhão moderno em um pátio ao entardecer">
         </section>
@@ -113,7 +114,6 @@
                     <h3>Isca para carga</h3>
                     <p>Monitoramento inteligente com isca de rastreio para cargas valiosas.</p>
                 </div>
-
             </div>
 
             <div class="highlights-section">
@@ -133,17 +133,16 @@
         </div>
     </section>
 
-    <section class="billCont">
+    <section class="billCont" id="cotacao">
         <img th:src="@{images/billPhoto.png}" alt="" class="billPhoto">
         <div class="billTexts">
             <p>FALE DIRETAMENTE COM NOSSA EQUIPE</p>
             <h2>SOLICITE SUA COTAÇÃO AGORA MESMO!</h2>
         </div>
         <img th:src="@{images/wppButton2.png}" alt="" class="wppButton2">
-
     </section>
 
-<footer class="site-footer">
+    <footer class="site-footer" id="contato">
         <div class="footer-container">
             <div class="footer-content">
                 
